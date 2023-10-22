@@ -1,0 +1,35 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/drawable/button_border_bg.xml" value="0.1345" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1345" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/drawable/rounded_dialog.xml" value="0.1345" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/activity_booking.xml" value="0.2625" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/activity_cart.xml" value="0.2625" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/activity_home.xml" value="0.2625" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/activity_main.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/fragment_booking_step_four.xml" value="0.2" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/fragment_booking_step_one.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/fragment_booking_step_three.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/fragment_booking_step_two.xml" value="0.19609375" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/fragment_shopping.xml" value="0.16" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/layout_barber.xml" value="0.2625" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/layout_cart_item.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/layout_look_book.xml" value="0.2625" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/layout_salon.xml" value="0.176" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/layout_shopping_item.xml" value="0.2" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/layout_time_slot.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/layout/layout_update_information.xml" value="0.1" />
+        <entry key="..\:/Users/ZhengHoom/AndroidStudioProjects/BarberBookingApplication/app/src/main/res/menu/home_menu.xml" value="0.19609375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
