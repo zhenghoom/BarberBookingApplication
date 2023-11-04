@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int APP_REQUEST_CODE = 7117;
 
-    private List<AuthUI.IdpConfig> providers; //part 32 code
+    private List<AuthUI.IdpConfig> providers;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     void loginUser(){
         startActivityForResult(AuthUI.getInstance()
                 .createSignInIntentBuilder()
-                .setAvailableProviders(providers).build(),APP_REQUEST_CODE); //part 32 code
+                .setAvailableProviders(providers).build(),APP_REQUEST_CODE);
     }
 
     @OnClick(R.id.txt_skip)

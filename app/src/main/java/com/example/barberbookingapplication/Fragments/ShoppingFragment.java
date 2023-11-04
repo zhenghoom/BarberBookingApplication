@@ -68,7 +68,7 @@ public class ShoppingFragment extends Fragment implements IShoppingDataLoadListe
     @OnClick(R.id.chip_body_care)
     void bodyCareChipClick(){
         setSelectedChip(chip_body_care);
-        loadShoppingItem("BodyCare");
+        loadShoppingItem("Body Care");
     }
 
     @BindView(R.id.chip_hair_care)
@@ -76,7 +76,7 @@ public class ShoppingFragment extends Fragment implements IShoppingDataLoadListe
     @OnClick(R.id.chip_hair_care)
     void hairCareChipClick(){
         setSelectedChip(chip_hair_care);
-        loadShoppingItem("HairCare");
+        loadShoppingItem("Hair Care");
     }
 
     @BindView(R.id.recycler_items)

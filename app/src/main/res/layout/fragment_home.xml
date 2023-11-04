@@ -39,10 +39,11 @@
                 android:layout_height="match_parent"/>
 
             <TextView
-                android:id="@+id/txt_member_type"
-                android:text="Testing"
+                android:id="@+id/txt_user_phone"
+                android:text="Phone"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
+                android:textStyle="italic"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 

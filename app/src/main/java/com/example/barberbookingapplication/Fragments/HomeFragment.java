@@ -88,6 +88,8 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     LinearLayout layout_user_information;
     @BindView(R.id.txt_user_name)
     TextView txt_user_name;
+    @BindView(R.id.txt_user_phone)
+    TextView txt_user_phone;
     @BindView(R.id.banner_slider)
     Slider banner_slider;
     @BindView(R.id.recycler_look_book)
@@ -147,7 +149,7 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     private void changeBookingFromUser() {
         androidx.appcompat.app.AlertDialog.Builder confirmDialog = new androidx.appcompat.app.AlertDialog.Builder(getActivity())
                 .setCancelable(false)
-                .setTitle("Hey")
+                .setTitle("WARNING")
                 .setMessage("Do you really want to change booking information?\nThis will delete your old booking information\n")
                 .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
                     @Override
@@ -215,42 +217,54 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
                     .collection("Booking")
                     .document(Common.currentBookingId);
 
-            //Delete
-            userBookingInfo.delete().addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    //After delete from user, delete from Calendar
-                    //First save Uri of event
-                    Paper.init(getActivity());
-                    if (Paper.book().read(Common.EVENT_URI_CACHE) != null)
-                    {
-                        String eventString = Paper.book().read(Common.EVENT_URI_CACHE).toString();
-                        Uri eventUri = null;
-                        if(eventString != null && !TextUtils.isEmpty(eventString))
-                            eventUri = Uri.parse(eventString);
-                        if(eventUri != null)
-                            getActivity().getContentResolver().delete(eventUri,null,null);
-                    }
+            androidx.appcompat.app.AlertDialog.Builder confirmDialog = new androidx.appcompat.app.AlertDialog.Builder(getActivity())
+                    .setCancelable(false)
+                    .setTitle("WARNING")
+                    .setMessage("Do you really wish to delete this booking?\nThis action cannot be undone!\n")
+                    .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                            dialog.dismiss();
+                        }
+                    }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //Delete
+                            userBookingInfo.delete().addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    //After delete from user, delete from Calendar
+                                    //First save Uri of event
+                                    Paper.init(getActivity());
+                                    if (Paper.book().read(Common.EVENT_URI_CACHE) != null)
+                                    {
+                                        String eventString = Paper.book().read(Common.EVENT_URI_CACHE).toString();
+                                        Uri eventUri = null;
+                                        if(eventString != null && !TextUtils.isEmpty(eventString))
+                                            eventUri = Uri.parse(eventString);
+                                        if(eventUri != null)
+                                            getActivity().getContentResolver().delete(eventUri,null,null);
+                                    }
+                                    Toast.makeText(getActivity(), "Delete Booking Successful!", Toast.LENGTH_SHORT).show();
+                                    //Refresh
+                                    loadUserBooking();
+                                    //CHeck if isChange -> Call from change button, will fired interface
+                                    if(isChange)
+                                        iBookingInformationChangeListener.onBookingInformationChange();
 
+                                    dialog.dismiss();
+                                }
+                            });
+                        }
+                    });
+            confirmDialog.show();
 
-                    Toast.makeText(getActivity(), "Delete Booking Successful!", Toast.LENGTH_SHORT).show();
-
-
-                    //Refresh
-                    loadUserBooking();
-
-                    //CHeck if isChange -> Call from change button, will fired interface
-                    if(isChange)
-                        iBookingInformationChangeListener.onBookingInformationChange();
-
-                    dialog.dismiss();
-                }
-            });
         }
         else
         {
@@ -463,6 +477,7 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     private void setUserInformation(){
         layout_user_information.setVisibility(View.VISIBLE);
         txt_user_name.setText(Common.currentUser.getName());
+        txt_user_phone.setText(Common.currentUser.getPhoneNumber());
     }
 
     @Override

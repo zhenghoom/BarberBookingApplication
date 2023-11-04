@@ -392,6 +392,7 @@ public class BookingStep4Fragment extends Fragment implements ICartItemLoadListe
 
         txt_salon_address.setText(Common.currentSalon.getAddress());
         txt_salon_website.setText(Common.currentSalon.getWebsite());
+        txt_salon_phone.setText(Common.currentSalon.getPhone());
         txt_salon_name.setText(Common.currentSalon.getName());
         txt_salon_open_hours.setText(Common.currentSalon.getOpenHours());
     }
